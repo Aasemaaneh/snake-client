@@ -1,2 +1,3 @@
 const conn = require("./client");
-conn()
+const con = conn();
+
