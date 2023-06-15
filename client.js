@@ -7,37 +7,37 @@ const conn = net.createConnection({//You used Node's net library (specifically, 
 });
 // interpret incoming data as text
 conn.setEncoding("utf8");
-conn.on("connect", () => {   // your conn object is an instance of the Socket class
-   console.log('Successfully connected to game server') // code that does something when the connection is first established
-   conn.write("Name: SAM");
-   conn.write("Move: up");
-   conn.write("Move: down");
-   conn.write("Move: left");
-   conn.write("Move: right");
-});
-conn.on("connect", () => {
-  console.log('Successfully connected to game server');
-
-  setTimeout(() => {
-    conn.write("Move: up");
-  }, 500);
-  
-  setTimeout(() => {
-    conn.write("Move: down");
-  }, 1000);
-  
-  setTimeout(() => {
-    conn.write("Move: left");
-  }, 1500);
-  
-  setTimeout(() => {
-    conn.write("Move: right");
-  }, 2000);
-});
-conn.on("data", (message) => {  
-   console.log(message);
-
-});
+//conn.on("connect", () => {   // your conn object is an instance of the Socket class
+//   console.log('Successfully connected to game server') // code that does something when the connection is first established
+//   conn.write("Name: SAM");
+//   conn.write("Move: up");
+//   conn.write("Move: down");
+//   conn.write("Move: left");
+//   conn.write("Move: right");
+//});
+//conn.on("connect", () => {
+//  console.log('Successfully connected to game server');
+//
+//  setTimeout(() => {
+//    conn.write("Move: up");
+//  }, 500);
+//  
+//  setTimeout(() => {
+//    conn.write("Move: down");
+//  }, 1000);
+//  
+//  setTimeout(() => {
+//    conn.write("Move: left");
+//  }, 1500);
+//  
+//  setTimeout(() => {
+//    conn.write("Move: right");
+//  }, 2000);
+//});
+//conn.on("data", (message) => {  
+//   console.log(message);
+//
+//});
 
 //conn.on("connect", () => {
 //  console.log('Successfully connected to game server');
