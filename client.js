@@ -1,14 +1,23 @@
 const net = require("net");
+const { IP, PORT, PLAYERNAME } = require("./constants");
 // establishes a connection with the game server
 const connect = function () {
 const conn = net.createConnection({//You used Node's net library (specifically, the createConnection function) to create an object named conn in the code .
-  host: 'localhost',  // IP address here,
-  port: 50541, // PORT number here,
+  host: IP,  // IP address here,
+  port: PORT, // PORT number here,
 });
 // interpret incoming data as text
 conn.setEncoding("utf8");
-//conn.on("connect", () => {   // your conn object is an instance of the Socket class
-//   console.log('Successfully connected to game server') // code that does something when the connection is first established
+conn.on("connect", () => {   // your conn object is an instance of the Socket class
+   console.log('Successfully connected to game server');
+});
+conn.on("connect", () => {
+    conn.write(`Name: ${PLAYERNAME}`);
+  });
+// code that does something when the connection is first established
+
+
+
 //   conn.write("Name: SAM");
 //   conn.write("Move: up");
 //   conn.write("Move: down");

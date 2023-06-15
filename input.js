@@ -1,3 +1,5 @@
+
+const { MESSAGE_MAPPINGS } = require("./constants");
 let connection;
 
 const setupInput = function (conn) {
@@ -12,26 +14,14 @@ const setupInput = function (conn) {
     return stdin;
  
 }
-    const handleUserInput = function (key) {
-      if (key === 'w') {
-        connection.write("Move: up");
-        console.log(connection);
-      } else if (key === 'a') {
-        connection.write("Move: left");
-      } else if (key === 's') {
-        connection.write("Move: down");
-      } else if (key === 'd') {
-        connection.write("Move: right");
-      } else if (key === 'h') {
-        connection.write("Say: Hello");
-      } else if (key === 'p') {
-        connection.write("Say: :P");
-      } else if (key === 'g') {
-        connection.write("Say: The Kubra is comming");
-      } else if (key === '\u0003') {
-        process.exit();
-      }
-    };
+const handleUserInput = function (key) {
+    if (MESSAGE_MAPPINGS.hasOwnProperty(key)) {
+      const message = MESSAGE_MAPPINGS[key];
+      connection.write(message);
+    } else if (key === '\u0003') {
+      process.exit();
+    }
+  };
     
 
     

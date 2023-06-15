@@ -5,3 +5,8 @@ console.log("Connecting ...");
 const conn = connect();
 
 setupInput(conn);
+function broadcast(message) {
+    clients.forEach(client => {
+      client.write(message);
+    });
+  }
