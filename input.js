@@ -22,6 +22,12 @@ const setupInput = function (conn) {
         connection.write("Move: down");
       } else if (key === 'd') {
         connection.write("Move: right");
+      } else if (key === 'h') {
+        connection.write("Say: Hello");
+      } else if (key === 'p') {
+        connection.write("Say: :P");
+      } else if (key === 'g') {
+        connection.write("Say: The Kubra is comming");
       } else if (key === '\u0003') {
         process.exit();
       }
