@@ -12,8 +12,7 @@ This is simply a multiplayer take on the genre.
 Before you can run this client, you will need to be running the server side which you can download and install from here. 
 
 ## Final Product
-
-[!["scr.jpg](#)](https://github.com/Aasemaaneh/snake-client/blob/533cb583509ed4bc464a722dcd45d28fc9b7f216/scr.jpg)
+https://github.com/Aasemaaneh/snake-client/blob/533cb583509ed4bc464a722dcd45d28fc9b7f216/scr.jpg
 
 
 
